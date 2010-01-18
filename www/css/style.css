@@ -1,0 +1,153 @@
+body {
+	background-color: #3399FF;
+	margin: 0px auto;
+}
+
+a {
+	text-decoration: none;
+	font-size: 12px;
+	color: #FFFFFF;
+}
+a:visited {
+	text-decoration: none;
+	color: #FFFFFF;
+}
+a:hover {
+	text-decoration: none;
+	color: #FFFFFF;
+}
+a:active {
+	text-decoration: none;
+	color: #FFFFFF;
+}
+
+.accordion h3 {
+	padding: 0px 0px;
+	margin: 0;
+	font: bold 10px Arial, Helvetica, sans-serif;
+	border: solid 1px #c4c4c4;
+}
+#ip:hover {
+	background-color: #3344e2;
+	cursor: pointer;
+	font: bold 10px Arial, Helvetica, sans-serif;
+	color: #FFFFFF;
+}
+.accordion h3.active {
+	background-position: right 5px;
+}
+.accordion p {
+	text-align: right;
+	margin: 0;
+	margin-left: 30%;
+	padding:  3px 3px 3px;
+	padding-right: 30px;
+	border-left: solid 1px #c4c4c4;
+	border-right: solid 1px #c4c4c4;
+	border-bottom: solid 1px #c4c4c4;
+	font: 10px Arial, Helvetica, sans-serif;
+}
+
+#name:hover {
+	cursor: pointer;
+	background-color: #6677e2;
+	font: bold 10px Arial, Helvetica, sans-serif;
+	color: #ffffff;
+}
+
+.centerbg1 {
+   display: none;
+   width:100%;
+   height:110%;
+   position: absolute;
+   top: 0px;
+   left: 0px;
+   z-index: 1000;
+   background: #2288ee;
+ }
+  
+ .centerbg2 {
+   position: absolute;
+   left: 50%;
+   top: 50%;
+ }
+  
+#preloader {
+   top: -50%;
+   left: -50%;
+   position: relative;
+   width: 333px;
+   height: 24px;
+   background: url('../pic/progbar_glow.png');
+   border: solid #FFFFFF 2px;
+ }
+
+#shap {
+   width:100%;
+   height:100%;
+   position: relative;
+   font-weight:normal;
+   font-size: 9px;
+}
+
+#shap_text{
+   width:100%;
+   height:80%;
+   position: absolute;
+   font-weight:normal;
+   z-index: 2;
+   font-size: 9px;
+}
+
+#news {
+   width:100%;
+   height:100%;
+   position: absolute;
+   z-index: 3;
+   overflow-x: hidden; 
+   overflow-y: scroll;
+
+}
+
+#news div {
+   font-weight:normal;
+   font-size: 9px;
+}
+
+#UserEdit {
+  display: none;
+   text-align: center;
+   top: 35%;
+   left: 35%;
+   width: 290px;
+   background: #889999;
+   border: 1px solid;
+   border-color: white; 
+   padding: 0px;
+   padding-bottom: 10px;
+   z-index: 1001;
+   position: absolute;
+}
+
+.window {
+   text-align: right;
+   vertical-align: middle;
+   width:100%;
+   top: 0px;
+   left: 0px;
+   border: 1px solid;
+   border-color: white;
+   background: #6688e3;
+}
+
+.window div {
+   position: relative;
+   width:100%;
+   height: 22px;
+   text-align: center;
+   top: 3px;
+   left: 0px;
+   font: bold 14px Arial, Helvetica, sans-serif;
+   color: #ffffff;
+   height:0;
+}

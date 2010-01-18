@@ -1,0 +1,16 @@
+#!/bin/sh
+#
+#
+iface_WAN="re0"
+iface_LAN="xl0"
+ip_WAN="192.168.1.2"
+ip_LAN="192.168.0.254"
+
+LAN_mask="192.168.0"
+
+db_host="localhost"
+db_user="trafd"
+db_passwd="trafd"
+db_db="trafd"
+
+mysql="/usr/local/bin/mysql"

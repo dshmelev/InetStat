@@ -1,0 +1,2 @@
+*/10 * * * /usr/local/inetstat/bin/traffic.sh
+*/10 * * * /usr/local/inetstat/bin/traffic.sh -e
