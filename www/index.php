@@ -117,7 +117,7 @@ pbInt = setInterval(function(){
 			<div id="shap_text"><b>Развитие проекта:</b><div>	
 			<div id="news">
 				<?php
-						include "news.php"
+//						include "news.php" 
 				?>
 			</div>
 		</div>
