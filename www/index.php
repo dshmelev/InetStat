@@ -7,7 +7,6 @@ function timeMeasure()
     return ($sec+$msec);
 }
 define('TIMESTART', timeMeasure());
-
 if(!mysql_connect($db_host,$db_user,$db_passwd))
 {
 echo "<br><br><BIG><CENTER>
@@ -116,9 +115,7 @@ pbInt = setInterval(function(){
 		<div id="shap">
 			<div id="shap_text"><b>Развитие проекта:</b><div>	
 			<div id="news">
-				<?php
-//						include "news.php" 
-				?>
+				<?php include "news.php" ?>
 			</div>
 		</div>
 	</td>

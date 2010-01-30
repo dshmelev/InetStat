@@ -67,15 +67,17 @@ a:active {
  }
   
  .centerbg2 {
-   position: absolute;
+   position: fixed;
    left: 50%;
    top: 50%;
  }
   
 #preloader {
-   top: -50%;
-   left: -50%;
-   position: relative;
+   top: 50%;
+   left: 50%;
+	margin-left:-166px;
+	margin-top:-12px;
+   position: fixed;
    width: 333px;
    height: 24px;
    background: url('../pic/progbar_glow.png');

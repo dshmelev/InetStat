@@ -1,64 +1,62 @@
 <?php
-$file = "http://github.com/api/v2/xml/commits/list/avik/InetStat/master/";
-echo "<meta http-equiv=\"Content-Type\" content=\"text/html; charset=utf-8\" />";
-$count=0;
+$news_file = "http://github.com/api/v2/xml/commits/list/avik/InetStat/master/";
+$news_count=0;
 
-function print_news($name,$mail,$url,$id,$date,$message)
+function print_news($news_name,$news_mail,$news_url,$news_id,$news_date,$news_message)
 {
-//$date[10]=" ";
-echo strtok($date,"T")." ".$name." (<a href=mailto:".$mail.">".$mail."</a>)<br>";
-echo "Message:".$message."<br>\n";
-echo "<a href=".$url.">".$id."</a><p>";
+$news_date[10]=" ";
+echo "<b>".$news_date."</b><a href=mailto:".$news_mail.">".$news_mail."</a><br>";
+echo "<b>Message:</b><a href=".$news_url.">".$news_message."</a><p>";
 }
 
-function characterData($parser, $data) 
+function characterData($news_parser, $news_data) 
 {
-	global $count;
-	global $name;
-	global $mail;
-	global $url;
-	global $id;
-	global $date;
-	global $message;
-	switch ($count) 
+	global $news_count;
+	global $news_name;
+	global $news_mail;
+	global $news_url;
+	global $news_id;
+	global $news_date;
+	global $news_message;
+	switch ($news_count) 
 	{
 		case 15:
-			$url = $data;
+			$news_url = $news_data;
 			break;
 		case 17:
-			$id = $data;
+			$news_id = $news_data;
 			break;
 		case 19:
-			$date = $data;
+			$news_date=substr($news_data, 0, 10);
 			break;
 		case 23:
-			$message = $data;
+			$news_message = $news_data;
 			break;
 		case 28:
-			$name = $data;
+			$news_name = $news_data;
 			break;
 		case 31:
-			$mail = $data;
+			$news_mail = $news_data;
 			break;
 		case 34:
-			$count=5;
-			print_news($name,$mail,$url,$id,$date,$message);
+			$news_count=0;
+			print_news($news_name,$news_mail,$news_url,$news_id,$news_date,$news_message);
 			break;
 	}
-	$count++;
+	$news_count++;
 }
 
-$xml_parser = xml_parser_create();
-xml_set_character_data_handler($xml_parser, "characterData");
-if (!($fp = fopen($file, "r"))) {
+$news_xml_parser = xml_parser_create();
+xml_set_character_data_handler($news_xml_parser, "characterData");
+if (!($news_fp = fopen($news_file, "r"))) {
     die("could not open XML input");
 }
-while ($data = fread($fp, 4096)) {
-    if (!xml_parse($xml_parser, $data, feof($fp))) {
+while ($news_data = fread($news_fp, 4096)) {
+    if (!xml_parse($news_xml_parser, $news_data, feof($news_fp))) {
         die(sprintf("XML error: %s at line %d",
-                    xml_error_string(xml_get_error_code($xml_parser)),
-                    xml_get_current_line_number($xml_parser)));
+                    xml_error_string(xml_get_error_code($news_xml_parser)),
+                    xml_get_current_line_number($news_xml_parser)));
     }
 }
-xml_parser_free($xml_parser);
+xml_parser_free($news_xml_parser);
 ?>
