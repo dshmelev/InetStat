@@ -4,7 +4,7 @@ $news_count=0;
 $news_count_current=1;
 function print_news($news_name,$news_mail,$news_url,$news_id,$news_date,$news_message)
 {
-echo "<b>".$news_date."</b><a href=mailto:".$news_mail.">".$news_mail."</a><br>";
+echo "<b>".$news_date."</b> <a href=mailto:".$news_mail.">".$news_mail."</a><br>";
 echo "<b>Message:</b><a href=".$news_url.">".$news_message."</a><p>";
 }
 
@@ -21,22 +21,22 @@ function characterData($news_parser, $news_data)
 	if ($news_count_current==0) {
 		switch ($news_count) 
 		{
-			case 17:
+			case 19:
 				$news_url = $news_data;
 				break;
 			case 19:
 				$news_id = $news_data;
 				break;
-			case 21:
+			case 19:
 				$news_date=substr($news_data, 0, 10);
 				break;
-			case 25:
+			case 27:
 				$news_message = $news_data;
 				break;
 			case 30:
 				$news_name = $news_data;
 				break;
-			case 33:
+			case 30:
 				$news_mail = $news_data;
 				break;
 			case 34:
